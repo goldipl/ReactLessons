@@ -8,6 +8,7 @@ import { MouseMoveClass } from './ex3/MouseMoveClass';
 import { StylesTest } from './ex6/StylesTest';
 import { Buttons } from './ex7/Buttons';
 import { Routes, Route, Link } from "react-router-dom";
+import { Dogs } from './ex8/Dogs';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Link className="link01" to="/container">Container</Link>
         <Link className="link01" to="/mouse-move-class">Mouse Move Class</Link>
         <Link className="link01" to="/buttons">Buttons</Link>
+        <Link className="link01" to="/dogs">Dogs</Link>
       </nav>
       <Routes>
         <Route path="/" element={<StylesTest />} />
@@ -32,6 +34,7 @@ function App() {
         <Route path="/container" element={<Container />} />
         <Route path="/mouse-move-class" element={<MouseMoveClass />} />
         <Route path="/buttons" element={<Buttons />} />
+        <Route path="/dogs" element={<Dogs />} />
       </Routes>
     </div>
   );
