@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './styles.module.css';
 import classNames from 'classnames';
+import { useNavigate } from 'react-router-dom';
 
 export const Buttons = () => {
 
@@ -8,6 +9,7 @@ export const Buttons = () => {
     const [greenBtnActive, setGreenBtnActive] = useState(false);
     const [yellowBtnActive, setYellowBtnActive] = useState(false);
     const [brownBtnActive, setBrownBtnActive] = useState(false);
+    const navigate = useNavigate();
 
     return (
     <div>
@@ -17,6 +19,10 @@ export const Buttons = () => {
             [styles.yellowButton]: yellowBtnActive,
             [styles.brownButton]: brownBtnActive,
         })} />
+
+        <button onClick={() => {
+            navigate("./mouse-move")
+        }}>Navigate to Mouse Move</button>
 
         <button onClick={() => {
             setRedBtnActive(!redBtnActive);
