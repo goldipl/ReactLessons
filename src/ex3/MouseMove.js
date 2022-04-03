@@ -6,16 +6,33 @@ export const MouseMove = () => {
         y: 0, 
     });
 
-    useEffect(() => {
-        window.addEventListener('mousemove', (e) => {
-            console.log(e.offsetX, e.offsetY);
+    // useEffect(() => {
+    //     window.addEventListener('mousemove', (e) => {
+    //         console.log(e.offsetX, e.offsetY);
 
+    //         setMousePosition({
+    //             x: e.offsetX,
+    //             y: e.offsetY,
+    //         })
+    //     });
+    // }, []);
+
+    useEffect(() => {
+        const mouseHandler = (e) => {
             setMousePosition({
                 x: e.offsetX,
                 y: e.offsetY,
             })
-        });
+        }
+
+        window.addEventListener('mousemove', mouseHandler);
+
+        return () => {
+            window.removeEventListener('mousemove', mouseHandler);
+        }
+
     }, []);
+    
 
     return (
         <>
