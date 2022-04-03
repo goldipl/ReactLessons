@@ -21,7 +21,7 @@ export const Buttons = () => {
         })} />
 
         <button onClick={() => {
-            navigate("./mouse-move")
+            navigate("./mouse-move", { replace: true});
         }}>Navigate to Mouse Move</button>
 
         <button onClick={() => {
