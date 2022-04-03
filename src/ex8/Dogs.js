@@ -10,10 +10,15 @@ export const Dogs = () => {
 
     const fetchDog = async () => {
         setIsLoadingDog(true);
-        const res = await axios.get(DOG_API);
-        setDogImage(res.data.message);
-        setIsLoadingDog(false);
-    }
+        try {
+            const res = await axios.get(DOG_API);
+            setDogImage(res.data.message);
+        } catch (error) {
+            alert('API error')
+        } finally {
+            setIsLoadingDog(false);
+        }
+    };
 
     return <div>
         <div>Dogs</div>
