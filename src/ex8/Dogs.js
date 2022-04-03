@@ -5,14 +5,14 @@ const DOG_API = 'https://dog.ceo/api/breeds/image/random';
 
 export const Dogs = () => {
 
-    const [dogImage, setDogImage] = useState('');
+    const [dogImages, setDogImages] = useState([]);
     const [isLoadingDog, setIsLoadingDog] = useState(false);
 
     const fetchDog = async () => {
         setIsLoadingDog(true);
         try {
             const res = await axios.get(DOG_API);
-            setDogImage(res.data.message);
+            setDogImages([...dogImages, res.data.message]);
         } catch (error) {
             alert('API error')
         } finally {
@@ -23,11 +23,13 @@ export const Dogs = () => {
     return <div>
         <div>Dogs</div>
         <button onClick={fetchDog} disabled={isLoadingDog}>Fetch dog</button>
-        {
-            isLoadingDog && <p>Loading...</p>
-        }
+            {
+                isLoadingDog && <p>Loading...</p>
+            }
         <div>
-            <img width="400" src={dogImage} />
+            {
+                dogImages.map(imageUrl => <img key={imageUrl} width="400" height="400" src={imageUrl} />)
+            }
         </div>
     </div>
 }
