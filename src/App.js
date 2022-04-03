@@ -16,10 +16,20 @@ function App() {
       <nav>
         <Link className="link01" to="/">Main</Link>
         <Link className="link01" to="/mouse-move">Mouse Move</Link>
+        <Link className="link01" to="/name-container">Name Container</Link>
+        <Link className="link01" to="/input-comp">Input Comp</Link>
+        <Link className="link01" to="/container">Container</Link>
+        <Link className="link01" to="/mouse-move-class">Mouse Move Class</Link>
+        <Link className="link01" to="/buttons">Buttons</Link>
       </nav>
       <Routes>
         <Route path="/" element={<StylesTest />} />
         <Route path="/mouse-move" element={<MouseMove />} />
+        <Route path="/name-container" element={<MouseMove />} />
+        <Route path="/input-comp" element={<MouseMove />} />
+        <Route path="/container" element={<MouseMove />} />
+        <Route path="/mouse-move-class" element={<MouseMove />} />
+        <Route path="/buttons" element={<MouseMove />} />
       </Routes>
     </div>
   );
