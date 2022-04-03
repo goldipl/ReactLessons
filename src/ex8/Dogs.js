@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const DOG_API = 'https://dog.ceo/api/breeds/image/random';
 
@@ -19,6 +19,10 @@ export const Dogs = () => {
             setIsLoadingDog(false);
         }
     };
+
+    useEffect(() => {
+        fetchDog();
+    }, [])
 
     return <div>
         <div>Dogs</div>
