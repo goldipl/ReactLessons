@@ -3,6 +3,10 @@
     height: 300px;
 }
 
+button {
+    cursor: pointer;
+}
+
 .greenButton {
     background-color: green;
 }
