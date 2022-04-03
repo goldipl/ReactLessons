@@ -16,7 +16,7 @@ return (
       <input placeholder='Type number' value={number} onChange={(e) => setNumber(Number(e.target.value))} />
       </div>
       <div>
-      <div>Number: {number*2}</div>
+      <div>Number*2: {number*2}</div>
       </div>
     </div>
   );
