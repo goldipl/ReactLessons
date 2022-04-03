@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+nav {
+  margin: 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #282c34;
+}
+
+nav .link01 {
+  margin-right: 8px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+nav .link01:hover {
+  color: chocolate;
+  transition: 0.6s;
+}
